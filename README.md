@@ -1,3 +1,3 @@
 # Arcade game
----
-*2D game for TP class project *
+
+2D game for TP class project
