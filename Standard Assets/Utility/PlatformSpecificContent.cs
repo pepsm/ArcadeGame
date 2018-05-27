@@ -72,11 +72,7 @@ namespace UnityStandardAssets.Utility
 
         private void CheckEnableContent()
         {
-<<<<<<< HEAD
 #if (UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_TIZEN || UNITY_STV )
-=======
-#if (UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_TIZEN)
->>>>>>> df5eecad96b23f498fe5b07ba7297bf027c16c28
 		if (m_BuildTargetGroup == BuildTargetGroup.Mobile)
 		{
 			EnableContent(true);
@@ -85,11 +81,7 @@ namespace UnityStandardAssets.Utility
 		}
 #endif
 
-<<<<<<< HEAD
 #if !(UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_TIZEN || UNITY_STV )
-=======
-#if !(UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_TIZEN)
->>>>>>> df5eecad96b23f498fe5b07ba7297bf027c16c28
             if (m_BuildTargetGroup == BuildTargetGroup.Mobile)
             {
                 EnableContent(false);

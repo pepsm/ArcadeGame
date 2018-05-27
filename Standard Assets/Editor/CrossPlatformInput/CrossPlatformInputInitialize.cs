@@ -93,10 +93,7 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                 BuildTargetGroup.Android,
                 BuildTargetGroup.iOS,
                 BuildTargetGroup.PSM, 
-<<<<<<< HEAD
                 BuildTargetGroup.SamsungTV,
-=======
->>>>>>> df5eecad96b23f498fe5b07ba7297bf027c16c28
                 BuildTargetGroup.Tizen,
                 BuildTargetGroup.WSA 
             };
