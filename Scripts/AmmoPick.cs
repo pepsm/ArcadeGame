@@ -9,8 +9,12 @@ public class AmmoPick : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		
 		gunsound.Play();
-
-		GlobalAmmo.CurrentAmmo += AmmoAmount;
-		this.gameObject.SetActive (false);
+		if (GlobalAmmo.LoadedAmmo == 0) {
+			GlobalAmmo.LoadedAmmo += AmmoAmount;
+			this.gameObject.SetActive (false);
+		} else {
+			GlobalAmmo.CurrentAmmo += AmmoAmount;
+			this.gameObject.SetActive (false);
+		}
 	}
 }

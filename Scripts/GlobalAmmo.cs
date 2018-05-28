@@ -8,8 +8,15 @@ public class GlobalAmmo : MonoBehaviour {
 	public int InternalAmmo;
 	public GameObject AmmoDisplay;
 
+	public static int LoadedAmmo;
+	public int InternalLoaded;
+	public GameObject LoadedDisplay;
+
 	void Update () {
 		InternalAmmo = CurrentAmmo;
+		InternalLoaded = LoadedAmmo;
+
+		LoadedDisplay.GetComponent<Text> ().text = "" + InternalLoaded;
 		AmmoDisplay.GetComponent<Text>().text = "" + InternalAmmo;
 	}
 }

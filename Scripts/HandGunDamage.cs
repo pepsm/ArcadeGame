@@ -10,7 +10,7 @@ public class HandGunDamage : MonoBehaviour {
 	public float AllowedRange = 15;
 
 	void Update(){
-		if (Input.GetButtonDown ("Fire1")) {
+		if (Input.GetButtonDown ("Fire1") && GlobalAmmo.LoadedAmmo > 0) {
 			RaycastHit Shot;
 			if(Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward),	out Shot)) 	{
 				TargetDistance = Shot.distance;

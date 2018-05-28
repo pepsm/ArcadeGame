@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class GunShot : MonoBehaviour {
 	void Update () {
-		if (Input.GetButtonDown ("Fire1")) {
+		if (Input.GetButtonDown ("Fire1") && GlobalAmmo.LoadedAmmo > 0) {
 		    AudioSource gunsound = GetComponent<AudioSource>();
 			gunsound.Play();
 			GetComponent<Animation>().Play("GunFire");
-			GlobalAmmo.CurrentAmmo -= 1;
+			GlobalAmmo.LoadedAmmo -= 1;
 		}	
 	}
 }
