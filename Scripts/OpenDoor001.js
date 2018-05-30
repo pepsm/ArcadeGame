@@ -7,17 +7,18 @@ var TheDoor : GameObject;
 
 
 
+
 function Update () {
 	TheDistance = PlayerCasting.DistanceFromTarget;		
 }
 
 function OnMouseOver () {
-	if (TheDistance <= 2) {
+	if (TheDistance <= 4) {
 		TextDisplay.GetComponent.<Text>().text = "Press 'e' button";
 	}
 
 	if (Input.GetButtonDown("Action")) {
-		if (TheDistance <= 2) {
+		if (TheDistance <= 6) {
 			OpenTheDoor();
 
 		}

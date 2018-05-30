@@ -4,7 +4,7 @@ var AllowedRange : float = 15;
 
 function Update () {
 
-if(GlobalAmmo.LoadedAmmo >= 1){
+if(GlobalAmmo.LoadedAmmo > 0){
 
 	if(Input.GetButtonDown("Fire1")) {
 
@@ -16,6 +16,7 @@ if(GlobalAmmo.LoadedAmmo >= 1){
 						Shot.transform.SendMessage("DeductPoints", DamageAmount);
 					}
 				}
+	
 			}
 		}
 	}
