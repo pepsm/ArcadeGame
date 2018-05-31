@@ -12,6 +12,7 @@ public class EnemyBehavior : MonoBehaviour {
 	public RaycastHit Shot;
 
 	public AudioSource EnemyAttackAudio;
+	public int PlayerDamage = 20;
 
 	void Update() {
 		transform.LookAt (ThePlayer.transform);
@@ -20,6 +21,7 @@ public class EnemyBehavior : MonoBehaviour {
 			if (TargetDistance < AllowedRange) {
 				EnemySpeed = 0.4f;
 				if (AttackTrigger == 0) {
+					PlayerHealth.ReduceHealth = 0;
 					TheEnemy.GetComponent<Animation> ().Play ("creature1walkforward");
 					transform.position = Vector3.MoveTowards (transform.position, ThePlayer.transform.position, EnemySpeed);
 				}
@@ -30,9 +32,14 @@ public class EnemyBehavior : MonoBehaviour {
 		}
 
 		if (AttackTrigger == 1) {
+			AttackTrigger = 0;
 			EnemySpeed = 0;
 			EnemyAttackAudio.Play ();
-			TheEnemy.GetComponent<Animation> ().Play ("creature1Attack2");
+
+			PlayerHealth.ReduceHealth = PlayerDamage;
+			Animation anim = TheEnemy.GetComponent<Animation> ();
+				anim.Play ("creature1Attack2");
+			new WaitWhile (()=> anim.isPlaying);
 		}
 	}
 

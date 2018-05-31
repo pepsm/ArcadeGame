@@ -13,12 +13,12 @@ function Update () {
 }
 
 function OnMouseOver () {
-	if (TheDistance <= 4) {
+	if (TheDistance <= 6) {
 		TextDisplay.GetComponent.<Text>().text = "Press 'e' button";
 	}
 
 	if (Input.GetButtonDown("Action")) {
-		if (TheDistance <= 6) {
+		if (TheDistance <= 8) {
 			OpenTheDoor();
 
 		}
